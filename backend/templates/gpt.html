@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT</title>
+    <!-- Add your CSS stylesheets and JavaScript libraries here if needed -->
+</head>
+<body>
+    <h1>Chat with ChatGPT</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="prompt">Enter your message:</label>
+        <input type="text" id="prompt" name="prompt" required>
+        <button type="submit">Send</button>
+    </form>
+
+    {% if chatResponse %}
+    <div class="response">
+        <strong>ChatGPT's Response:</strong>
+        <p>{{ chatResponse }}</p>
+    </div>
+    {% endif %}
+
+    <!-- Add any additional HTML structure and styling as needed -->
+
+    <!-- Add your JavaScript scripts here if needed -->
+</body>
+</html>
